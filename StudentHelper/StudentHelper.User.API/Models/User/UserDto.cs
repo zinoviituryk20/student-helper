@@ -1,5 +1,5 @@
 ﻿
-namespace StudentHelper.User.API.Models
+namespace StudentHelper.Admin.API.Models
 {
     public class UserDto
     {

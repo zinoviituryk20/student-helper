@@ -8,11 +8,15 @@ using System.Threading.Tasks;
 
 namespace DbStudentHelper.Data
 {
-    public class TblRole
+    [Table("tblLocation")]
+    public class TblLocation
     {
         [Key]
-        public int RoleId {  get; set; }
-        [Required,Column(TypeName ="nvarchar(255)")]
-        public string Role {  get; set; }
+        public int LocationId {  get; set; }
+
+        [Required]
+        public bool Physical {  get; set; }
+
+        public string Address {  get; set; }
     }
 }

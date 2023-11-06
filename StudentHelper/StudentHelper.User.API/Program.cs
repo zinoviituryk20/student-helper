@@ -1,13 +1,15 @@
 using AutoMapper;
 using DbStudentHelper;
 using Microsoft.EntityFrameworkCore;
+using StudentHelper.Admin.API.Repository;
 using StudentHelper.User.API.Configuration;
-using StudentHelper.User.API.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ISchoolRepository,SchoolRepository>();
+builder.Services.AddScoped<IClassRepository, ClassRepository>();
 
 IMapper mapper = MapingConfiguration.RegisterMapping().CreateMapper();
 

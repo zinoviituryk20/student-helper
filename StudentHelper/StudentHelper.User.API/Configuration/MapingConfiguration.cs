@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DbStudentHelper.Data;
-using StudentHelper.User.API.Models;
+using StudentHelper.Admin.API.Models;
 
 namespace StudentHelper.User.API.Configuration
 {
@@ -10,8 +10,16 @@ namespace StudentHelper.User.API.Configuration
         {
             var config = new MapperConfiguration(config =>
             {
+                //user model map
                 config.CreateMap<UserDto, TblUser>().ReverseMap();
-                config.CreateMap<RoleDto,TblRole>().ReverseMap();
+                config.CreateMap<RoleDto, TblRole>().ReverseMap();
+
+                //school model map
+                config.CreateMap<EducationInstitutionDto, TblEducationInstitution>().ReverseMap();
+                config.CreateMap<ClassDto, TblClass>().ReverseMap();
+                config.CreateMap<ClassStudentsDto,ZtblClassStudent>().ReverseMap();
+
+
             });
 
             return config;

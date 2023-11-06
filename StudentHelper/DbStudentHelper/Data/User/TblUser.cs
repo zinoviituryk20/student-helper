@@ -41,5 +41,13 @@ namespace DbStudentHelper.Data
 
         [ForeignKey("RoleId")]
         public TblRole Role { get; set; }
+
+        public ICollection<TblMark> StudentMarks { get; set; }
+
+        public ICollection<ZtblClassStudent> ClassStudents { get; set; }
+
+        public ICollection<TblClass> StudentsClasses { get; set; }
+
+        public ICollection<TblClass> HeadTeacherClasses { get; set; }
     }
 }

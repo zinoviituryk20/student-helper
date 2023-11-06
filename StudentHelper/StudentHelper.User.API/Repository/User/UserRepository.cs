@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using DbStudentHelper;
 using DbStudentHelper.Data;
-using StudentHelper.User.API.Models;
+using StudentHelper.Admin.API.Models;
 
-namespace StudentHelper.User.API.Repository
+namespace StudentHelper.Admin.API.Repository
 {
     public class UserRepository : IUserRepository
     {
