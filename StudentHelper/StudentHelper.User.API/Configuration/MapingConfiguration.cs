@@ -18,7 +18,7 @@ namespace StudentHelper.User.API.Configuration
                 config.CreateMap<EducationInstitutionDto, TblEducationInstitution>().ReverseMap();
                 config.CreateMap<ClassDto, TblClass>().ReverseMap();
                 config.CreateMap<ClassStudentsDto,ZtblClassStudent>().ReverseMap();
-
+                config.CreateMap<SubjectDto,TblSubject>().ReverseMap();
 
             });
 

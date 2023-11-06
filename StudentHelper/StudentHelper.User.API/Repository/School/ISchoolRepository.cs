@@ -4,12 +4,12 @@ namespace StudentHelper.Admin.API.Repository
 {
     public interface ISchoolRepository
     {
-        IEnumerable<EducationInstitutionDto> GetEducationInstitutions();
+        public IEnumerable<EducationInstitutionDto> GetEducationInstitutions();
 
-        EducationInstitutionDto GetEducationInstitution(int educationInstitutionId);
+        public EducationInstitutionDto GetEducationInstitution(int educationInstitutionId);
 
-        EducationInstitutionDto CreateUpdateEducationInstitution(EducationInstitutionDto educationInstitution);
+        public EducationInstitutionDto CreateUpdateEducationInstitution(EducationInstitutionDto educationInstitution);
 
-        bool DeleteEducationInstitution(int eduationInstitutionId);
+        public bool DeleteEducationInstitution(int eduationInstitutionId);
     }
 }

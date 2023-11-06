@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using StudentHelper.User.API.Models;
-using StudentHelper.User.API.Repository;
+using StudentHelper.Admin.API.Models;
+using StudentHelper.Admin.API.Repository;
+
 using System.Collections.Generic;
 
 namespace StudentHelper.User.API.Controllers

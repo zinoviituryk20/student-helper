@@ -2,6 +2,7 @@ using AutoMapper;
 using DbStudentHelper;
 using Microsoft.EntityFrameworkCore;
 using StudentHelper.Admin.API.Repository;
+using StudentHelper.Admin.API.Repository.School;
 using StudentHelper.User.API.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISchoolRepository,SchoolRepository>();
 builder.Services.AddScoped<IClassRepository, ClassRepository>();
+builder.Services.AddScoped<ISubjectRepository, SubjectRepository>();
 
 IMapper mapper = MapingConfiguration.RegisterMapping().CreateMapper();
 
