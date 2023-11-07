@@ -1,13 +1,27 @@
 using AutoMapper;
+using DbStudentHelper;
+using Microsoft.EntityFrameworkCore;
 using StudentHelper.Teacher.API.Configuration;
+using StudentHelper.Teacher.API.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IMarkRepository, MarkRepository>();
+builder.Services.AddScoped<ISubjectRepository, SubjectRepository>();
 
 IMapper mapper = MappingConfiguration.RegisterMapping().CreateMapper();
 
 builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+var connectionString = builder.Configuration.GetConnectionString("DbConnection") ?? string.Empty;
+
+builder.Services.AddDbContext<StudentHelperDbContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
