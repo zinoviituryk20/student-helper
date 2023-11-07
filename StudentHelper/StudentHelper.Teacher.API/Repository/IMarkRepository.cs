@@ -5,7 +5,7 @@ namespace StudentHelper.Teacher.API.Repository
     public interface IMarkRepository
     {
 
-        IEnumerable<MarkDto> GetubjectMark(int subjectId);
+        IEnumerable<MarkDto> GetubjectMarks(int subjectId);
 
         MarkDto GetMark(int markId);
 
