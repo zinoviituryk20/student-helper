@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentHelper.Admin.API", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentHelper.Teacher.API", "StudentHelper.Teacher.API\StudentHelper.Teacher.API.csproj", "{8D02756E-DC30-475B-A27E-821B63B01B99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentHelper.Student.API", "StudentHelper.Student.API\StudentHelper.Student.API.csproj", "{B02925D2-5B2A-4E9B-9F9A-21DFBE2F79C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentHelper.Student.API", "StudentHelper.Student.API\StudentHelper.Student.API.csproj", "{B02925D2-5B2A-4E9B-9F9A-21DFBE2F79C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentHelper.User.API", "StudentHelper.User.API\StudentHelper.User.API.csproj", "{E9C0D186-4AEF-4A40-A2AB-43AA49260B81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackEnd", "BackEnd", "{2567263E-8CA1-4542-888F-279B1E093CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentHelper.API", "StudentHelper.API\StudentHelper.API.csproj", "{5516442A-B1FC-4BF7-8189-B1679933E8FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +47,14 @@ Global
 		{B02925D2-5B2A-4E9B-9F9A-21DFBE2F79C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B02925D2-5B2A-4E9B-9F9A-21DFBE2F79C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B02925D2-5B2A-4E9B-9F9A-21DFBE2F79C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9C0D186-4AEF-4A40-A2AB-43AA49260B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9C0D186-4AEF-4A40-A2AB-43AA49260B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9C0D186-4AEF-4A40-A2AB-43AA49260B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9C0D186-4AEF-4A40-A2AB-43AA49260B81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5516442A-B1FC-4BF7-8189-B1679933E8FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5516442A-B1FC-4BF7-8189-B1679933E8FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5516442A-B1FC-4BF7-8189-B1679933E8FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5516442A-B1FC-4BF7-8189-B1679933E8FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +63,7 @@ Global
 		{96D38164-A7A3-4CA3-B3F0-E46E8754EA27} = {48F568BB-3A55-40E1-A0EA-95546F89808F}
 		{8D02756E-DC30-475B-A27E-821B63B01B99} = {48F568BB-3A55-40E1-A0EA-95546F89808F}
 		{B02925D2-5B2A-4E9B-9F9A-21DFBE2F79C2} = {48F568BB-3A55-40E1-A0EA-95546F89808F}
+		{E9C0D186-4AEF-4A40-A2AB-43AA49260B81} = {48F568BB-3A55-40E1-A0EA-95546F89808F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37FF4F13-6930-4632-ACEE-FDE2082D167A}

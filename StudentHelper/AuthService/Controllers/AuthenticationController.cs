@@ -16,33 +16,46 @@ namespace AuthService.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
+        protected ResponseDto _response;
         private readonly IAuthService _authService;
         public AuthenticationController(IAuthService authService)
         {
+            _response = new ResponseDto();
             _authService = authService;
         }
 
         [HttpPost("auth")]
-        public async Task<ActionResult> Login([FromBody] LoginModel user)
+        public object Login([FromBody] LoginModel user)
         {
             try
             {
                 var token = _authService.GenerateToken(user);
-                return Ok(token);
+                _response.Result = token;
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                _response.DisplayMessage = "Error";
+                _response.ErrorMessages = new List<string> { ex.Message };
             }
+            return _response;
 
         }
         [HttpGet("verify")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<ActionResult> VerifyToken(string role)
+        public object VerifyToken(string role = null)
         {
-            var result = _authService.VerifyUser(User.Claims.ToList(), role);
-
-            return new StatusCodeResult(result);
+            try
+            {
+                var result = _authService.VerifyUser(User.Claims.ToList(), role);
+                if (result != 200)
+                    throw new Exception(result.ToString());
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string> { ex.Message };
+            }
+            return _response;
         }
     }
 }

@@ -9,23 +9,48 @@ namespace StudentHelper.User.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        protected ResponseDto _response;
         private readonly IUserRepository _userRepository;
 
         public UserController(IUserRepository userRepository)
         {
             _userRepository = userRepository;
+            this._response = new ResponseDto();
         }
 
         [HttpGet]
-        public UserDto GetUserById(int userId)
+        public object GetUserById(int userId)
         {
-            return _userRepository.GetUserById(userId);
+            try
+            {
+                var user = _userRepository.GetUserById(userId);
+                _response.Result = user;
+            }
+            catch(Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>(){ ex.ToString() };
+
+            }
+
+            return _response;
         }
 
-        [HttpPost]
-        public UserDto UpdateUserInfo(UserDto userDto)
+        [HttpPut]
+        public object UpdateUserInfo(UserDto userDto)
         {
-            return _userRepository.UpdateUserInfo(userDto);
+            try
+            {
+                var updateUser = _userRepository.UpdateUserInfo(userDto);
+                _response.Result = updateUser;
+            }
+            catch(Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+
+            }
+            return _response;
         }
     }
 }

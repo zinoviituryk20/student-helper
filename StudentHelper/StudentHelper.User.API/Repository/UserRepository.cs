@@ -10,9 +10,10 @@ namespace StudentHelper.User.API.Repository
         private readonly StudentHelperDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public UserRepository(StudentHelperDbContext dbContext)
+        public UserRepository(StudentHelperDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public UserDto GetUserById(int userId)

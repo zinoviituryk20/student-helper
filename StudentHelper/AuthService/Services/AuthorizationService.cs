@@ -46,7 +46,7 @@ namespace AuthService.Services
             if (!userExists)
                 return StatusCodes.Status401Unauthorized;
 
-            if (userRole == null || role != userRole.Value)
+            if (!string.IsNullOrEmpty(role) && (userRole == null || role != userRole.Value))
                 return StatusCodes.Status403Forbidden;
 
             return StatusCodes.Status200OK;

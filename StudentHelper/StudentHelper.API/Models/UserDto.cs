@@ -1,7 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿
 
-namespace StudentHelper.User.API.Models
+namespace StudentHelper.API.Models
 {
     public class UserDto
     {
